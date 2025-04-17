@@ -10,6 +10,7 @@ from ._observer import Observer
 
 logger = getLogger("py_volume_watcher")
 
+
 class FileWatcher:
     """Watches a directory for file changes matching a specific pattern.
 
@@ -30,7 +31,7 @@ class FileWatcher:
         pattern: str = "*",
         *,
         polling_interval_sec: float | int = 0.5,
-        on_exit_timeout: float | int = 1.0
+        on_exit_timeout: float | int = 1.0,
     ) -> None:
         """Initializes the file watcher.
 

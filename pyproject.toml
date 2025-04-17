@@ -1,10 +1,10 @@
 [tool.poetry]
 name = "py-volume-watcher"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["Nicolas M. <mine.nicolas@gmail.com>"]
 readme = "README.md"
-packages = [{include = "py_volume_watcher"}]
+packages = [{ include = "py_volume_watcher" }]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -17,3 +17,42 @@ pytest-mock = "^3.14.0"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+
+[tool.ruff]
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "site-packages",
+    "venv",
+]
+
+# Same as Black.
+line-length = 120
+indent-width = 4
+
+# Assume Python 3.9
+target-version = "py39"

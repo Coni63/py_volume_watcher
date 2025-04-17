@@ -12,7 +12,6 @@ from threading import Event
 logger = getLogger("py_volume_watcher")
 
 
-
 def sha256sum(file: Path) -> str:
     """Computes the SHA-256 hash of a file.
 
@@ -25,14 +24,13 @@ def sha256sum(file: Path) -> str:
     Returns:
         str: The hexadecimal SHA-256 digest of the file.
     """
-    h  = hashlib.sha256()
-    b  = bytearray(128 * 1024)
+    h = hashlib.sha256()
+    b = bytearray(128 * 1024)
     mv = memoryview(b)
-    with open(file, 'rb', buffering=0) as f:
+    with open(file, "rb", buffering=0) as f:
         for n in iter(lambda: f.readinto(mv), 0):
             h.update(mv[:n])
     return h.hexdigest()
-
 
 
 class Observer(Thread):
@@ -58,7 +56,7 @@ class Observer(Thread):
         pattern: str,
         queue: Queue,
         polling_interval_sec: float | int,
-        stop_event: Event
+        stop_event: Event,
     ) -> None:
         """Initializes the observer thread.
 

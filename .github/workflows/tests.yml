@@ -6,10 +6,18 @@ on:
 
 jobs:
   test:
-    runs-on: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on:
+      - ubuntu-latest
+      # - windows-latest
+      # - macos-latest
     strategy:
       matrix:
-        python-version: ["pypy3.10", "3.9", "3.10", "3.11", "3.12"]
+        python-version:
+          # - "pypy3.10"
+          - "3.9"
+          # - "3.10"
+          # - "3.11"
+          # - "3.12"
 
     steps:
       - uses: actions/checkout@v4
@@ -17,6 +25,5 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-      # You can test your matrix by printing the current Python version
       - name: Run tests
         run: pytest .

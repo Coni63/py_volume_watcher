@@ -1,1 +1,1 @@
-from .watcher import FileWatcher, FileEvent
+from .watcher import FileWatcher  # noqa: F401
